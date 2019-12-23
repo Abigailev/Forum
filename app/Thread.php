@@ -17,6 +17,8 @@ class Thread extends Model
      */
     protected $guarded = [];
 
+    protected $appends = ['isSubscribedTo'];
+
     /**
      * The relationship to always eager-load.
      *
@@ -92,5 +94,12 @@ class Thread extends Model
         $this->subscriptions()
              ->where('user_id', $userId ?: auth()->id())
              ->delete();
+    }
+
+    public function  getIsSubscribedToAttribute()
+    {
+        return $this->subscriptions()
+            ->where('user_id', auth()->id())
+            ->exists();
     }
 }

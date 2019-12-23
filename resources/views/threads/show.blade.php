@@ -68,7 +68,7 @@
                             and currently has <span v-text="repliesCount"></span>   comments.
                         </p>
                         <p>
-                            <subscribe-button></subscribe-button>
+                            <subscribe-button :active="{{ json_encode($thread->isSubscribedTo) }}"></subscribe-button>
 {{--                            <button class="btn btn-default">Subscribe</button>--}}
                         </p>
                     </div>

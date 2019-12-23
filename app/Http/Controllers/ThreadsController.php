@@ -89,6 +89,8 @@ class ThreadsController extends Controller
         //return $thread->load('replies.favorites')->load('replies.owner');
         //return $threads->replies;
 
+        //dd $thread;
+
         return view('threads.show', compact('thread'));
 
     }

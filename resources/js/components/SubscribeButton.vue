@@ -1,17 +1,28 @@
 <template>
-    <button class="btn btn-default">Subscribe</button>
+    <button :class="classes" @click="subscribe" >Subscribe</button>
 </template>
 
 <script>
     export default {
-          methods: {
-              subscribe(){
-                  axios.post(location.pathname + 'subscriptions'):
+        props:['active'],
 
-
-                  flash('Subscribed');
+        computed: {
+              classes(){
+                  return ['btn', this.active ? 'btn-primary' : 'btn-default'];
               }
-          }
+        },
+
+        methods: {
+              subscribe(){
+
+                  axios[
+                      (this.active ? 'delete' : 'post')
+                   ](location.pathname + 'subscriptions');
+
+                  this.active =  ! this.active;
+
+              }
+         }
     }
 </script>
 
