@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="973ee0e4-8e78-43ce-a062-8edb2946e0f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Favoritable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Favoritable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ThreadSubscriptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ThreadSubscriptions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/SubscribeToThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/SubscribeToThreadsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +159,7 @@
       <recent name="$PROJECT_DIR$/tests/Unit" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.NotificationsTest">
+  <component name="RunManager" selected="PHPUnit.ThreadTest.a_thread_notifies_all_registered_subscribers_when_a_reply_is_added">
     <configuration name="NotificationsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\NotificationsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" scope="Class" />
       <method v="2" />
@@ -179,12 +172,12 @@
       <TestRunner class="Tests\Feature\NotificationsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" method="a_user_can_mark_a_notification_as_read" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="SubscribeToThreadsTest.a_user_can_subscribe_to_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\SubscribeToThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/SubscribeToThreadsTest.php" method="a_user_can_subscribe_to_threads" scope="Method" />
-      <method v="2" />
-    </configuration>
     <configuration name="SubscribeToThreadsTest.a_user_can_unsubscribe_from_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\SubscribeToThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/SubscribeToThreadsTest.php" method="a_user_can_unsubscribe_from_threads" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ThreadTest.a_thread_notifies_all_registered_subscribers_when_a_reply_is_added" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ThreadTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ThreadTest.php" method="a_thread_notifies_all_registered_subscribers_when_a_reply_is_added" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -193,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.NotificationsTest" />
-        <item itemvalue="PHPUnit.SubscribeToThreadsTest.a_user_can_unsubscribe_from_threads" />
-        <item itemvalue="PHPUnit.SubscribeToThreadsTest.a_user_can_subscribe_to_threads" />
-        <item itemvalue="PHPUnit.NotificationsTest.a_user_can_mark_a_notification_as_read" />
+        <item itemvalue="PHPUnit.ThreadTest.a_thread_notifies_all_registered_subscribers_when_a_reply_is_added" />
         <item itemvalue="PHPUnit.NotificationsTest.a_notification_is_prepared_when_a_subscribed_thread_receives_a_new_reply_that_is_not_by_the_current_user" />
+        <item itemvalue="PHPUnit.SubscribeToThreadsTest.a_user_can_unsubscribe_from_threads" />
+        <item itemvalue="PHPUnit.NotificationsTest.a_user_can_mark_a_notification_as_read" />
+        <item itemvalue="PHPUnit.NotificationsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +235,7 @@
       <workItem from="1577121180316" duration="16094000" />
       <workItem from="1577377888349" duration="8734000" />
       <workItem from="1577387688105" duration="2000" />
-      <workItem from="1577387883787" duration="7556000" />
+      <workItem from="1577387883787" duration="11151000" />
     </task>
     <servers />
   </component>
@@ -286,22 +279,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1148" y="293" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1920.1080@0.0.1920.1080" timestamp="1576608578310" />
-    <state width="1282" height="214" key="GridCell.Tab.0.bottom" timestamp="1577400310290">
+    <state width="1088" height="2" key="GridCell.Tab.0.bottom" timestamp="1577405352565">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1282" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577400310290" />
-    <state width="1282" height="214" key="GridCell.Tab.0.center" timestamp="1577400310289">
+    <state width="1088" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352565" />
+    <state width="1088" height="2" key="GridCell.Tab.0.center" timestamp="1577405352564">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1282" height="214" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577400310289" />
-    <state width="1282" height="214" key="GridCell.Tab.0.left" timestamp="1577400310289">
+    <state width="1088" height="2" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352564" />
+    <state width="1088" height="2" key="GridCell.Tab.0.left" timestamp="1577405352564">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1282" height="214" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577400310289" />
-    <state width="1282" height="214" key="GridCell.Tab.0.right" timestamp="1577400310289">
+    <state width="1088" height="2" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352564" />
+    <state width="1088" height="2" key="GridCell.Tab.0.right" timestamp="1577405352565">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1282" height="214" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577400310289" />
+    <state width="1088" height="2" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352565" />
     <state x="1169" y="358" key="NewPhpClassDialog" timestamp="1576608344582">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -326,9 +319,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="961" y="243" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577124362905" />
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1577400660556">
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1577405222858">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577400660556" />
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577405222858" />
   </component>
 </project>
