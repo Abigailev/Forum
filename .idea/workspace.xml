@@ -2,9 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="973ee0e4-8e78-43ce-a062-8edb2946e0f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/ThrottleException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Inspections/DetectKeyHeldDown.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Inspections/InvalidKeywords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Inspections/Spam.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Rules/SpamFree.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/SpamTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/ReplyPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ReplyPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Flash.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Flash.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NewReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewReply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ParticipateInThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ParticipateInThreadsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,33 +172,35 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Inspections" />
       <recent name="$PROJECT_DIR$/resources/views/profiles" />
       <recent name="$PROJECT_DIR$/tests/Unit" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.ThreadTest.a_thread_notifies_all_registered_subscribers_when_a_reply_is_added">
-    <configuration name="NotificationsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\NotificationsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.ParticipateInThreadsTest.users_may_only_reply_a_maximum_of_once_per_minute">
+    <configuration name="ParticipateInThreadsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ParticipateInThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ParticipateInThreadsTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="NotificationsTest.a_notification_is_prepared_when_a_subscribed_thread_receives_a_new_reply_that_is_not_by_the_current_user" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\NotificationsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" method="a_notification_is_prepared_when_a_subscribed_thread_receives_a_new_reply_that_is_not_by_the_current_user" scope="Method" />
+    <configuration name="ParticipateInThreadsTest.replies_that_contains_spam_may_not_be_created" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ParticipateInThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ParticipateInThreadsTest.php" method="replies_that_contains_spam_may_not_be_created" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="NotificationsTest.a_user_can_mark_a_notification_as_read" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\NotificationsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" method="a_user_can_mark_a_notification_as_read" scope="Method" />
+    <configuration name="ParticipateInThreadsTest.users_may_only_reply_a_maximum_of_once_per_minute" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ParticipateInThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ParticipateInThreadsTest.php" method="users_may_only_reply_a_maximum_of_once_per_minute" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="SubscribeToThreadsTest.a_user_can_unsubscribe_from_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\SubscribeToThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/SubscribeToThreadsTest.php" method="a_user_can_unsubscribe_from_threads" scope="Method" />
+    <configuration name="ReplyTest.it_knows_if_was_just_published" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_knows_if_was_just_published" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ThreadTest.a_thread_notifies_all_registered_subscribers_when_a_reply_is_added" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\ThreadTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ThreadTest.php" method="a_thread_notifies_all_registered_subscribers_when_a_reply_is_added" scope="Method" />
+    <configuration name="UserTest.a_user_can_fetch_their_most_recent_reply" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="a_user_can_fetch_their_most_recent_reply" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -186,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ThreadTest.a_thread_notifies_all_registered_subscribers_when_a_reply_is_added" />
-        <item itemvalue="PHPUnit.NotificationsTest.a_notification_is_prepared_when_a_subscribed_thread_receives_a_new_reply_that_is_not_by_the_current_user" />
-        <item itemvalue="PHPUnit.SubscribeToThreadsTest.a_user_can_unsubscribe_from_threads" />
-        <item itemvalue="PHPUnit.NotificationsTest.a_user_can_mark_a_notification_as_read" />
-        <item itemvalue="PHPUnit.NotificationsTest" />
+        <item itemvalue="PHPUnit.ParticipateInThreadsTest.users_may_only_reply_a_maximum_of_once_per_minute" />
+        <item itemvalue="PHPUnit.ParticipateInThreadsTest.replies_that_contains_spam_may_not_be_created" />
+        <item itemvalue="PHPUnit.ReplyTest.it_knows_if_was_just_published" />
+        <item itemvalue="PHPUnit.UserTest.a_user_can_fetch_their_most_recent_reply" />
+        <item itemvalue="PHPUnit.ParticipateInThreadsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +258,8 @@
       <workItem from="1577121180316" duration="16094000" />
       <workItem from="1577377888349" duration="8734000" />
       <workItem from="1577387688105" duration="2000" />
-      <workItem from="1577387883787" duration="11151000" />
+      <workItem from="1577387883787" duration="11241000" />
+      <workItem from="1577982873495" duration="19061000" />
     </task>
     <servers />
   </component>
@@ -255,6 +279,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="869" y="123" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1577381855518" />
+    <state x="743" y="97" key="#SpamTest.it_validates_spam" timestamp="1577990405121">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="743" y="97" key="#SpamTest.it_validates_spam/0.0.1920.1080@0.0.1920.1080" timestamp="1577990405121" />
     <state x="1014" y="381" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1575574271613">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -263,10 +291,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="336" y="261" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1576617313185" />
-    <state x="1007" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1577384283419">
+    <state x="1007" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1578006817937">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1007" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1577384283419" />
+    <state x="1007" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578006817937" />
+    <state x="974" y="241" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577995649400">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="974" y="241" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577995649400" />
     <state x="1123" y="145" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1575999949309">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -279,22 +311,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1148" y="293" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1920.1080@0.0.1920.1080" timestamp="1576608578310" />
-    <state width="1088" height="2" key="GridCell.Tab.0.bottom" timestamp="1577405352565">
+    <state width="1066" height="318" key="GridCell.Tab.0.bottom" timestamp="1578007224892">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1088" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352565" />
-    <state width="1088" height="2" key="GridCell.Tab.0.center" timestamp="1577405352564">
+    <state width="1066" height="318" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578007224892" />
+    <state width="1066" height="318" key="GridCell.Tab.0.center" timestamp="1578007224891">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1088" height="2" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352564" />
-    <state width="1088" height="2" key="GridCell.Tab.0.left" timestamp="1577405352564">
+    <state width="1066" height="318" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578007224891" />
+    <state width="1066" height="318" key="GridCell.Tab.0.left" timestamp="1578007224891">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1088" height="2" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352564" />
-    <state width="1088" height="2" key="GridCell.Tab.0.right" timestamp="1577405352565">
+    <state width="1066" height="318" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578007224891" />
+    <state width="1066" height="318" key="GridCell.Tab.0.right" timestamp="1578007224892">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1088" height="2" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577405352565" />
+    <state width="1066" height="318" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578007224892" />
     <state x="1169" y="358" key="NewPhpClassDialog" timestamp="1576608344582">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -307,10 +339,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="536" height="445" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1575666602466" />
-    <state x="469" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1577387885816">
+    <state x="469" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1577982874624">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="469" y="174" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577387885816" />
+    <state x="469" y="174" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577982874624" />
     <state x="780" y="179" width="667" height="714" key="find.popup" timestamp="1576091746114">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -319,9 +351,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="961" y="243" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577124362905" />
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1577405222858">
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1578005943170">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577405222858" />
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578005943170" />
   </component>
 </project>

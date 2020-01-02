@@ -101,5 +101,40 @@ class ParticipateInThreadsTest extends TestCase
 
         $this->assertDatabaseHas('replies', ['id' => $reply->id, 'body'=>$updatedReply ]);
     }
+
+    /** @test */
+    function replies_that_contains_spam_may_not_be_created()
+    {
+        $this->withExceptionHandling();
+        $this->signIn();
+
+        $thread = create('App\Thread');
+        $reply = make('App\Reply', [
+            'body' => 'Yahoo Customer Support'
+        ]);
+
+        $this->post($thread->path().'/replies', $reply->toArray())
+             ->assertStatus(422);
+    }
+
+    /** @test */
+    function users_may_only_reply_a_maximum_of_once_per_minute()
+    {
+        $this->withExceptionHandling();
+        $this->signIn();
+
+        $thread = create('App\Thread');
+
+        $reply = make('App\Reply', [
+            'body' => 'My simple reply'
+        ]);
+
+        //dude aqui el status deberia ser 200 pero no c por que pide el 201, ia veremos dijo el ciego
+        $this->post($thread->path().'/replies', $reply->toArray())
+            ->assertStatus(201);
+
+        $this->post($thread->path().'/replies', $reply->toArray())
+             ->assertStatus(429);
+    }
 }
 
