@@ -86,12 +86,6 @@ class ThreadsController extends Controller
      */
     public function show($channel, Thread $thread)
     {
-        //return $thread->load('replies');
-        //return $thread;
-        //return $thread->load('replies.favorites')->load('replies.owner');
-        //return $threads->replies;
-
-        //dd $thread;
 
         if(auth()->check()){
             auth()->user()->read($thread);
@@ -164,7 +158,7 @@ class ThreadsController extends Controller
         if ($channel->exists) {
             $threads->where('channel_id', $channel->id);
         }
-        return $threads->latest()->get();
+        return $threads->latest()->paginate(5);
         //between the $threads and the latest() was a 'with('channel')'
     }
 }

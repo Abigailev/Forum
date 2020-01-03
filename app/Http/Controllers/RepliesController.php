@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreatePostForm;
+use App\Http\Requests\CreatePostRequest;
 use App\Reply;
 use App\Thread;
-use Illuminate\Auth\Access\Gate;
-use Illuminate\Http\Request;
+
 
 class RepliesController extends Controller
 {
@@ -20,14 +19,21 @@ class RepliesController extends Controller
          return $thread->replies()->paginate(1);
     }
 
-    public function store($channelId, Thread $thread, CreatePostForm $form)
+    public function store($channelId, Thread $thread, CreatePostRequest $form)
     {
+       return $thread->addReply([
+          'body' => request('body'),
+          'user_id' => auth()->id()
+       ])->load('owner');
+    }
 
-            return $reply = $thread->addReply([
-                'body' => request('body'),
-                'user_id' => auth()->id()
-            ])->load('owner');
+    public function update(Reply $reply)
+    {
+        $this->authorize('update', $reply);
 
+        $this->validate(request(), ['body' => 'required|spamfree']);
+
+        $reply->update(request(['body']));
     }
 
     public function destroy(Reply $reply)
@@ -44,22 +50,6 @@ class RepliesController extends Controller
         }
 
         return back();
-    }
-
-    public function update(Reply $reply)
-    {
-        $this->authorize('update', $reply );
-
-        try {
-            $this->validateReply();
-
-            //$reply->update(['body' => request('body')]);
-            $reply->update(request(['body']));
-        } catch(\Exception $e){
-            return response(
-                'Sorry, your reply could not be saved at this moment.', 422
-            );
-        }
     }
 
 }
