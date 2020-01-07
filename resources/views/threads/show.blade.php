@@ -13,6 +13,8 @@
                     <div class="card-header">
                         <div class="level">
                             <span class="flex">
+                                <img src="{{$thread->creator->avatar()}}" alt="{{$thread->creator->name}}" width="25" height="25" class="mr-1">
+{{--                                <img src="{{$thread->creator->avatar()}}" alt="{{$thread->creator->name}}" width="25" height="25" class="mr-1">--}}
                                 <h1><a href="{{ route('profile', $thread->creator)  }}">{{$thread -> creator -> name }}</a></h1> posted:
                                 <h3>{{$thread -> title}}</h3>
                             </span>

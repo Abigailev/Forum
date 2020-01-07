@@ -3,7 +3,6 @@
 namespace App;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -17,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','avatar_path',
     ];
 
     /**
@@ -69,6 +68,14 @@ class User extends Authenticatable
         cache()->forever(
             $this->visitedThreadCacheKey($thread),
             Carbon::now());
+    }
+
+    //getAvatarPathAttribute($avatar)
+    public function avatar()
+    {
+        //return asset($this->avatar_path ?: 'avatars/default.jpg');
+        return $this->avatar_path ?: 'avatars/default.jpg';
+        //return asset($avatar ?: 'avatars/default.jpg');
     }
 
     public function visitedThreadCacheKey($thread)
