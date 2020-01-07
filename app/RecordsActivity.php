@@ -4,6 +4,8 @@
 namespace App;
 
 
+use Illuminate\Support\Facades\Redis;
+
 trait RecordsActivity
 {
 
@@ -26,6 +28,7 @@ trait RecordsActivity
     {
         return ['created'];
     }
+
 
     protected function recordActivity($event)
     {
@@ -53,4 +56,5 @@ trait RecordsActivity
         $type = strtolower((new \ReflectionClass($this))->getShortName());
         return "{$event}_{$type}";
     }
+
 }

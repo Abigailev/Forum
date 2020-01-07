@@ -6,6 +6,7 @@ use App\Events\ThreadReceivedNewReply;
 use App\Filters\ThreadFilters;
 use App\Notifications\ThreadWasUpdated;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Redis;
 use function foo\func;
 
 class Thread extends Model
@@ -116,4 +117,12 @@ class Thread extends Model
         $key = auth()->user()->visitedThreadCacheKey($this);
         return $this->updated_at >cache($key);
     }
+
+//        public function visits()
+//    {
+//        return new Visits($this);
+//    }
+
+
+
 }

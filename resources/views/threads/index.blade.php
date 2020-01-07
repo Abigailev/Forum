@@ -10,6 +10,7 @@
 
             </div>
 
+
             <div class="col-md-4">
                 @if(count($trending))
                 <div class="card ">

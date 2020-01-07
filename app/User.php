@@ -35,6 +35,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'confirmed' => 'boolean'
     ];
 
     /**
@@ -62,6 +63,12 @@ class User extends Authenticatable
         return $this->hasMany(Activity::class);
     }
 
+    public function confirm()
+    {
+        $this->confirmed = true;
+        $this->save();
+    }
+
     public function read($thread)
     {
         //Simulate that the user visited the thread
@@ -82,6 +89,7 @@ class User extends Authenticatable
     {
         return sprintf("users.%s.visits.%s", $this->id, $thread->id);
     }
+
 
 
 }

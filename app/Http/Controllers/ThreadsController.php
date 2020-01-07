@@ -38,8 +38,8 @@ class ThreadsController extends Controller
         }
 
         //$trending = array_map('json_decode', Redis::zrevrange('trending_threads', 0, 4));
-
         //return view('threads.index', compact('threads', 'trending'));
+
         return view('threads.index', [
             'threads' => $threads,
             'trending' => $trending->get()
@@ -64,7 +64,10 @@ class ThreadsController extends Controller
      */
     public function store(Request $request)
     {
-//        dd(request()->all());
+//eso lo puse en un middleware
+//        if(! auth()->user()->confirmed){
+//            return redirect('/threads')->with('flash','You must confirm your email address.');
+//        }
 
         $this-> validate($request, [
            'title'=>  'required|spamfree',
@@ -73,7 +76,7 @@ class ThreadsController extends Controller
         ]);
 
 
-        //prueba //dd($request->all());
+        //dd($request->all());
         $thread = Thread::create([
            'user_id' => auth()->id(),
            'channel_id' => request('channel_id'),
@@ -99,7 +102,10 @@ class ThreadsController extends Controller
             auth()->user()->read($thread);
         }
 
-        $trending->push($thread );
+        $trending->push($thread);
+
+        //$thread->visits()->record();
+        $thread->increment('visits');
 
         return view('threads.show', compact('thread'));
 

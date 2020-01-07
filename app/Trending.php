@@ -18,8 +18,16 @@ class Trending
         ]));
     }
 
+    //considero que esta es info privada so asi la deje, el vato la tiene publica(POR SI SE OFRECE)
     protected function cacheKey()
     {
         return app()->environment('testing') ? 'testing_trending_threads' : 'trending_threads';
+        //return 'trending_threads';
     }
+
+    public function reset()
+    {
+        Redis::del($this->cacheKey());
+    }
+
 }
