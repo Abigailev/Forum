@@ -2,27 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="973ee0e4-8e78-43ce-a062-8edb2946e0f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Visits.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/RegistrationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/authorizations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/RegisterConfirmationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/RegisterConfirmationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SendEmailConfirmationRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/PleaseConfirmYourEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/PleaseConfirmYourEmail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/RecordsActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RecordsActivity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Trending.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trending.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_180728_create_threads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_03_180728_create_threads_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Flash.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Flash.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NewReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewReply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/confirm/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/confirm/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/TrendingThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/TrendingThreadTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/RegistrationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/RegistrationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,34 +177,36 @@
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/storage" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
       <recent name="$PROJECT_DIR$/app/Inspections" />
       <recent name="$PROJECT_DIR$/resources/views/profiles" />
       <recent name="$PROJECT_DIR$/tests/Unit" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/storage" />
+    </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.RegistrationTest.users_can_fully_confirm_their_email_addresses">
-    <configuration name="CreateThreadsTest.authenticated_users_must_first_confirm_their_email_address_before_creating_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\CreateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" method="authenticated_users_must_first_confirm_their_email_address_before_creating_threads" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.BestReplyTest.only_the_threads_creator_may_mark_a_reply_as_best">
+    <configuration name="BestReplyTest.a_thread_creator_may_mark_any_reply_as_the_best_reply" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\BestReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" method="a_thread_creator_may_mark_any_reply_as_the_best_reply" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ExampleTest.we_record_a_new_visit_each_time_the_thread_is_read" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ExampleTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" method="we_record_a_new_visit_each_time_the_thread_is_read" scope="Method" />
+    <configuration name="BestReplyTest.only_the_threads_creator_may_mark_a_reply_as_best" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\BestReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" method="only_the_threads_creator_may_mark_a_reply_as_best" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTest.a_confirmation_email_is_sent_upon_registration" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\RegistrationTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/RegistrationTest.php" method="a_confirmation_email_is_sent_upon_registration" scope="Method" />
+    <configuration name="CreateThreadsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CreateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTest.users_can_fully_confirm_their_email_addresses" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\RegistrationTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/RegistrationTest.php" method="users_can_fully_confirm_their_email_addresses" scope="Method" />
+    <configuration name="CreateThreadsTest.a_thread_with_a_title_that_ends_in_a_number_should_generate_the_proper_slug" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CreateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" method="a_thread_with_a_title_that_ends_in_a_number_should_generate_the_proper_slug" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ThreadTest.a_thread_records_each_visit" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\ThreadTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ThreadTest.php" method="a_thread_records_each_visit" scope="Method" />
+    <configuration name="ReplyTest.it_knows_if_it_is_the_best_reply" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_knows_if_it_is_the_best_reply" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -210,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.RegistrationTest.users_can_fully_confirm_their_email_addresses" />
-        <item itemvalue="PHPUnit.RegistrationTest.a_confirmation_email_is_sent_upon_registration" />
-        <item itemvalue="PHPUnit.CreateThreadsTest.authenticated_users_must_first_confirm_their_email_address_before_creating_threads" />
-        <item itemvalue="PHPUnit.ExampleTest.we_record_a_new_visit_each_time_the_thread_is_read" />
-        <item itemvalue="PHPUnit.ThreadTest.a_thread_records_each_visit" />
+        <item itemvalue="PHPUnit.BestReplyTest.only_the_threads_creator_may_mark_a_reply_as_best" />
+        <item itemvalue="PHPUnit.BestReplyTest.a_thread_creator_may_mark_any_reply_as_the_best_reply" />
+        <item itemvalue="PHPUnit.ReplyTest.it_knows_if_it_is_the_best_reply" />
+        <item itemvalue="PHPUnit.CreateThreadsTest" />
+        <item itemvalue="PHPUnit.CreateThreadsTest.a_thread_with_a_title_that_ends_in_a_number_should_generate_the_proper_slug" />
       </list>
     </recent_temporary>
   </component>
@@ -267,6 +272,7 @@
       <workItem from="1578077228806" duration="12613000" />
       <workItem from="1578327337774" duration="23554000" />
       <workItem from="1578413966566" duration="17880000" />
+      <workItem from="1578499315568" duration="20626000" />
     </task>
     <servers />
   </component>
@@ -278,6 +284,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="718" y="235" key="#CLI_Interpreters/0.0.1920.1080@0.0.1920.1080" timestamp="1577382423559" />
+    <state x="842" y="238" key="#CreateThreadsTest.a_thread_requires_a_unique_slug_using_the_id" timestamp="1578515760528">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="842" y="238" key="#CreateThreadsTest.a_thread_requires_a_unique_slug_using_the_id/0.0.1920.1080@0.0.1920.1080" timestamp="1578515760528" />
     <state x="852" y="149" key="#CreateThreadsTest.authorized_users_can_delete_threads" timestamp="1577381858355">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -306,10 +316,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1007" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578006817937" />
-    <state x="974" y="241" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578419967649">
+    <state x="974" y="241" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578501564144">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="974" y="241" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578419967649" />
+    <state x="974" y="241" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578501564144" />
     <state x="1123" y="145" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1575999949309">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -322,22 +332,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1148" y="293" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1920.1080@0.0.1920.1080" timestamp="1578420381225" />
-    <state width="1118" height="330" key="GridCell.Tab.0.bottom" timestamp="1578440689222">
+    <state width="495" height="8" key="GridCell.Tab.0.bottom" timestamp="1578527682963">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1118" height="330" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578440689222" />
-    <state width="1118" height="330" key="GridCell.Tab.0.center" timestamp="1578440689222">
+    <state width="495" height="8" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578527682963" />
+    <state width="495" height="8" key="GridCell.Tab.0.center" timestamp="1578527682962">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1118" height="330" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578440689222" />
-    <state width="1118" height="330" key="GridCell.Tab.0.left" timestamp="1578440689221">
+    <state width="495" height="8" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578527682962" />
+    <state width="495" height="8" key="GridCell.Tab.0.left" timestamp="1578527682961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1118" height="330" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578440689221" />
-    <state width="1118" height="330" key="GridCell.Tab.0.right" timestamp="1578440689222">
+    <state width="495" height="8" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578527682961" />
+    <state width="495" height="8" key="GridCell.Tab.0.right" timestamp="1578527682962">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1118" height="330" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578440689222" />
+    <state width="495" height="8" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578527682962" />
     <state x="1169" y="358" key="NewPhpClassDialog" timestamp="1578422724139">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -350,10 +360,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="536" height="445" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1575666602466" />
-    <state x="469" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1578413967244">
+    <state x="469" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1578499366030">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="469" y="174" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578413967244" />
+    <state x="469" y="174" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578499366030" />
     <state x="951" y="214" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578424334113">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -366,9 +376,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="961" y="243" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577124362905" />
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1578440122552">
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1578527263115">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578440122552" />
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578527263115" />
   </component>
 </project>

@@ -16,6 +16,14 @@ class RegistrationTest extends TestCase
     public function a_confirmation_email_is_sent_upon_registration()
     {
         Mail::fake();
+
+        $this->post('/register', [
+            'name' => 'John',
+            'email' => 'john@example.com',
+            'password' => 'foobar123',
+            'password_confirmation' => 'foobar123'
+        ]);
+
         event(new Registered(create('App\User')));
         Mail::assertSent(PleaseConfirmYourEmail::class);
     }
@@ -23,6 +31,8 @@ class RegistrationTest extends TestCase
     /** @test */
     public function users_can_fully_confirm_their_email_addresses()
     {
+        Mail::fake();
+
         $this->post('/register', [
             'name' => 'John',
             'email' => 'john@example.com',
@@ -35,8 +45,21 @@ class RegistrationTest extends TestCase
         $this->assertFalse($user->confirmed);
         $this->assertNotNull($user->confirmation_token);
 
-        $this->get('register/confirm?token=' . $user->confirmation_token);
+        $this->get(route('register.confirm', ['token' => $user->confirmation_token]))
+            ->assertRedirect(route('threads'));
 
-        $this->assertTrue($user->fresh()->confirmed);
+        tap($user->fresh(), function ($user){
+            $this->assertTrue($user->confirmed);
+            $this->assertNull($user->confirmation_token);
+        });
+    }
+
+    /** @test */
+    public function confirming_an_invalid_token()
+    {
+        $this->get(route('register.confirm', ['token' => 'invalid']))
+             ->assertRedirect(route('threads'))
+             ->assertSessionHas('flash', 'Unknown token.');
     }
 }
+//PARA LAS RUTAS puedes poner en el redirect ya sea el nombre de la ruta, ej: '/register' o poner route('register')

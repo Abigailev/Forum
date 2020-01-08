@@ -10,6 +10,7 @@ use App\Trending;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Str;
 
 
 class ThreadsController extends Controller
@@ -81,8 +82,14 @@ class ThreadsController extends Controller
            'user_id' => auth()->id(),
            'channel_id' => request('channel_id'),
            'title' => request('title'),
-           'body' => request('body')
+           'body' => request('body'),
+           //'slug' => Str::slug(request('title'))
+           //'slug' => request('title')
         ]);
+
+        if(request()->wantsJson()){
+            return response($thread, 201);
+        }
 
         return redirect($thread->path())
             ->with('flash', 'Your thread has been published!');
@@ -177,4 +184,5 @@ class ThreadsController extends Controller
         return $threads->latest()->paginate(5);
         //between the $threads and the latest() was a 'with('channel')'
     }
+
 }
