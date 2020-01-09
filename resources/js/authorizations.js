@@ -1,7 +1,11 @@
     let user = window.App.user;
 
     module.exports = {
-        updateReply(reply) {
-            return reply.user.id === user.id;
+        owns(model, prop= 'user_id'){
+            return model[prop] === user.id;
+        }
+
+        isAdmin(){
+            return ['JohnDoe', 'MansonK'].includes(user.name);
         }
     };

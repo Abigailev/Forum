@@ -10,7 +10,8 @@ trait Favoritable
     protected static function bootFavoritable()
     {
         static::deleting(function($model){
-            $model->favorites()->each()->delete();
+            $model->favorites()->delete();
+            //entre el favorites y delete habia un each idk why
         });
     }
 
