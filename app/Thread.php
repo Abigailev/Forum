@@ -23,6 +23,8 @@ class Thread extends Model
 
     protected $appends = ['isSubscribedTo'];
 
+    protected $casts = ['locked' => 'boolean'];
+
     /**
      * The relationship to always eager-load.
      *
@@ -87,6 +89,11 @@ class Thread extends Model
     public function lock()
     {
        return $this->update(['locked' => true]);
+    }
+
+    public function unlock()
+    {
+        return $this->update(['locked' => false]);
     }
 
     public function scopeFilter($query, ThreadFilters $filters)

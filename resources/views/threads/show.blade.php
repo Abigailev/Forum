@@ -5,40 +5,16 @@
 @endsection
 
 @section('content')
-    <thread-view :data-replies-count="{{ $thread->replies_count }}" :data-locked="{{$thread->locked}}" inline-template>
+    <thread-view :thread="{{$thread}}" inline-template>
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="level">
-                            <span class="flex">
-                                <img src="{{$thread->creator->avatar()}}" alt="{{$thread->creator->name}}" width="25" height="25" class="mr-1">
-{{--                                <img src="{{$thread->creator->avatar()}}" alt="{{$thread->creator->name}}" width="25" height="25" class="mr-1">--}}
-                                <h1><a href="{{ route('profile', $thread->creator)  }}">{{$thread -> creator -> name }}</a></h1> posted:
-                                <h3>{{$thread -> title}}</h3>
-                            </span>
-
-                            @can('update', $thread)
-                            <form action="{{ $thread->path() }}" method="POST">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-
-                                <button typ="submit" class="btn btn-link "> Delete Thread</button>
-                            </form>
-                            @endcan
-
-                        </div>
-                    </div>
-
-                    <div class="card-body">
-                        {{$thread -> body}}
-                    </div>
-                </div>
+            <div class="col-md-8" v-cloak>
+                @include('threads._question')
 
                 <replies :data="{{ $thread->replies }}"
                          @added="repliesCount++"
                          @removed="repliesCount--"></replies>
+            </div>
 {{--                @foreach ($replies as $reply)--}}
 {{--                    @include('threads.reply')--}}
 {{--                @endforeach--}}
@@ -75,14 +51,21 @@
                         </p>
                         <p>
                             <subscribe-button :active="{{ json_encode($thread->isSubscribedTo) }}" v-if="signedIn"></subscribe-button>
-                            <button class="btn btn-default" v-if="authorize('isAdmin')" @click="locked = true">Lock</button>
+                            <button class="btn btn-default"
+                                    v-if="authorize('isAdmin')"
+                                    @click="toggleLock"
+                                    v-text="'locked'? 'Unlock' : 'Lock'">Lock</button>
                             {{--                            <button class="btn btn-default">Subscribe</button>--}}
                         </p>
                     </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn-xs" @click="editing = true">Edit</button>
+                    </div>
+
                 </div>
             </div>
 
-        </div>
     </div>
     </div>
     </thread-view>

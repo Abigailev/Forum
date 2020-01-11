@@ -4,7 +4,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class LockThreads extends TestCase
+class LockThreadsTest extends TestCase
 {
     use DatabaseMigrations;
 
@@ -36,6 +36,21 @@ class LockThreads extends TestCase
         //dd($thread);
 
         $this->assertTrue(!! $thread->fresh()->locked, 'Failed asserting that the thread was locked');
+
+    }
+
+    /** @test */
+    public function administrators_can_unlock_threads()
+    {
+        //$this->signIn(create('App\User', ['name' => 'MansonK']));
+        $this->signIn(factory('App\User')->state('administrator')->create());
+        $thread = create('App\Thread', ['user_id' => auth()->id(), 'locked'=>false]);
+
+        $this->delete(route('locked-threads.destroy', $thread));
+
+        //dd($thread);
+
+        $this->assertFalse($thread->fresh()->locked, 'Failed asserting that the thread was unlocked');
 
     }
 

@@ -2,27 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="973ee0e4-8e78-43ce-a062-8edb2946e0f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/LockThreads.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/threads/_question.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Favoritable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Favoritable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BestRepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BestRepliesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LockedThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LockedThreadsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_180728_create_threads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_03_180728_create_threads_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_182712_create_replies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_02_182712_create_replies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/authorizations.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/authorizations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Replies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Replies.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reply.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/Thread.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Thread.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/LockThreads.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/LockThreadsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +163,9 @@
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/storage" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
@@ -181,29 +173,26 @@
       <recent name="$PROJECT_DIR$/resources/views/profiles" />
       <recent name="$PROJECT_DIR$/tests/Unit" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/storage" />
-    </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.LockThreads">
-    <configuration name="ChannelTest.a_channel_consist_of_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ChannelTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ChannelTest.php" method="a_channel_consist_of_threads" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.SearchTest.a_user_can_search_a_thread">
+    <configuration name="CreateThreadsTest.a_thread_can_be_updated_by_its_creator" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CreateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" method="a_thread_can_be_updated_by_its_creator" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="CreateThreadsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\CreateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" scope="Class" />
+    <configuration name="SearchTest.a_user_can_search_a_thread" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SearchTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/SearchTest.php" method="a_user_can_search_a_thread" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="LockThreads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\LockThreads" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/LockThreads.php" scope="Class" />
+    <configuration name="UpdateThreadsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UpdateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UpdateThreadsTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="LockThreads.administrators_can_lock_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\LockThreads" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/LockThreads.php" method="administrators_can_lock_threads" scope="Method" />
+    <configuration name="UpdateThreadsTest.a_thread_can_be_updated_by_its_creator" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UpdateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UpdateThreadsTest.php" method="a_thread_can_be_updated_by_its_creator" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="LockThreads.non_administrators_may_not_lock_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\LockThreads" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/LockThreads.php" method="non_administrators_may_not_lock_threads" scope="Method" />
+    <configuration name="UpdateThreadsTest.unauthorized_users_may_not_update_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UpdateThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UpdateThreadsTest.php" method="unauthorized_users_may_not_update_threads" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -212,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.LockThreads" />
-        <item itemvalue="PHPUnit.LockThreads.administrators_can_lock_threads" />
-        <item itemvalue="PHPUnit.LockThreads.non_administrators_may_not_lock_threads" />
-        <item itemvalue="PHPUnit.CreateThreadsTest" />
-        <item itemvalue="PHPUnit.ChannelTest.a_channel_consist_of_threads" />
+        <item itemvalue="PHPUnit.SearchTest.a_user_can_search_a_thread" />
+        <item itemvalue="PHPUnit.UpdateThreadsTest.unauthorized_users_may_not_update_threads" />
+        <item itemvalue="PHPUnit.UpdateThreadsTest" />
+        <item itemvalue="PHPUnit.UpdateThreadsTest.a_thread_can_be_updated_by_its_creator" />
+        <item itemvalue="PHPUnit.CreateThreadsTest.a_thread_can_be_updated_by_its_creator" />
       </list>
     </recent_temporary>
   </component>
@@ -272,6 +261,7 @@
       <workItem from="1578499315568" duration="20626000" />
       <workItem from="1578585687764" duration="1122000" />
       <workItem from="1578590556476" duration="15028000" />
+      <workItem from="1578677261362" duration="14064000" />
     </task>
     <servers />
   </component>
@@ -319,6 +309,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="954" y="290" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578590526003" />
+    <state x="302" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578684459432">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="302" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578684459432" />
     <state x="974" y="241" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578501564144">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -331,6 +325,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1069" y="35" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1920.1080@0.0.1920.1080" timestamp="1576617881615" />
+    <state x="1052" y="425" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1" timestamp="1578684356285">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1052" y="425" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1/0.0.1920.1080@0.0.1920.1080" timestamp="1578684356285" />
     <state x="1148" y="293" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1" timestamp="1578420381225">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -343,22 +341,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="901" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1578594219893" />
-    <state width="1148" height="263" key="GridCell.Tab.0.bottom" timestamp="1578613875465">
+    <state width="1148" height="31" key="GridCell.Tab.0.bottom" timestamp="1578700900218">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1148" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578613875465" />
-    <state width="1148" height="263" key="GridCell.Tab.0.center" timestamp="1578613875464">
+    <state width="1148" height="31" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578700900218" />
+    <state width="1148" height="31" key="GridCell.Tab.0.center" timestamp="1578700900217">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1148" height="263" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578613875464" />
-    <state width="1148" height="263" key="GridCell.Tab.0.left" timestamp="1578613875464">
+    <state width="1148" height="31" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578700900217" />
+    <state width="1148" height="31" key="GridCell.Tab.0.left" timestamp="1578700900217">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1148" height="263" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578613875464" />
-    <state width="1148" height="263" key="GridCell.Tab.0.right" timestamp="1578613875464">
+    <state width="1148" height="31" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578700900217" />
+    <state width="1148" height="31" key="GridCell.Tab.0.right" timestamp="1578700900218">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1148" height="263" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578613875464" />
+    <state width="1148" height="31" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578700900218" />
     <state x="1169" y="358" key="NewPhpClassDialog" timestamp="1578422724139">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -371,10 +369,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="536" height="445" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1575666602466" />
-    <state x="469" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1578590558485">
+    <state x="469" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1578677402849">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="469" y="174" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578590558485" />
+    <state x="469" y="174" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578677402849" />
     <state x="951" y="214" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578424334113">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -387,9 +385,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="961" y="243" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577124362905" />
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1578612440501">
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup" timestamp="1578698850613">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578612440501" />
+    <state x="825" y="331" width="681" height="755" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578698850613" />
   </component>
 </project>

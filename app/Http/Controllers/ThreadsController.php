@@ -139,7 +139,23 @@ class ThreadsController extends Controller
     //public function update(Request $request, Thread $thread)
     public function update($channel, Thread $thread)
     {
-        //
+        //es lo mismo pero a este si le entiendo xd
+//        $data = request()->validate([
+//           'title' => 'required|spamfree',
+//           'body'  => 'required|spamfree'
+//        ]);
+//        $thread->update($data);
+        $this->authorize('update', $thread);
+
+        //se le pone el tap porque el request regresa en booleano y ps truena(en caso de que se pusiera directamente un return)
+        $thread->update(request()->validate([
+            'title' => 'required|spamfree',
+            'body'  => 'required|spamfree'
+        ]));
+
+        return $thread;
+
+//        $thread->update(request(['body', 'title']);
     }
 
     /**

@@ -5,15 +5,61 @@
 
     export default {
 
-        props: ['dataRepliesCount', 'dataLocked'],
+        props: ['thread'],
 
         components: { Replies, SubscribeButton },
 
         data(){
             return {
-                repliesCount: this.dataRepliesCount,
-                locked: this.dataLocked
+                repliesCount: this.thread.repliesCount,
+                //replies_count
+                locked: this.thread.locked,
+                editing:false,
+                title: this.thread.title,
+                body: this.thread.body,
+                form: {},
+                editing: false
             };
+        },
+
+        created() {
+            this.resetForm();
+        },
+
+        methods: {
+            toggleLock(){
+                let uri = `/locked-thread/${this.thread.slug}`;
+                axios[
+                    this.locked ? 'delete' : 'post'
+                ](uri);
+                this.locked =  ! this.locked;
+            },
+
+            cancel(){
+                this.resetForm();
+            },
+
+            update(){
+
+                let uri = `/threads/${this.thread.channel.slug}/${this.thread.slug}`;
+                axios.patch(uri, this.form).then(() =>{
+
+                    this.editing = false;
+                    this.form.title;
+                    this.form.body;
+
+                    flash('Your thread has been updated');
+                })
+            },
+
+            resetForm(){
+                this.form = {
+                    title: this.thread.title,
+                    body: this.thread.body
+                };
+
+                this.editing = false;
+            }
         }
     }
 </script>
