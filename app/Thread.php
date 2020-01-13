@@ -8,11 +8,12 @@ use App\Notifications\ThreadWasUpdated;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Redis;
 use \Illuminate\Support\Str;
+use Laravel\Scout\Searchable;
 use function foo\func;
 
 class Thread extends Model
 {
-    use RecordsActivity;
+    use RecordsActivity, Searchable;
 
     /**
      * Don't auto-play mass assigment protection.
@@ -167,5 +168,11 @@ class Thread extends Model
       {
           $this->update(['best_reply_id' => $reply->id]);
       }
+
+    public function toSearchableArray()
+    {
+        return $this->toArray() + ['path' => $this->path()];
+    }
+
 
 }

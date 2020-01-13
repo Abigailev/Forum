@@ -9,7 +9,8 @@
 
     <div class="card-body">
         <div class="form-group">
-            <textarea class="form-control" rows="10" v-model="form.body">{{$thread->body}}</textarea>
+{{--            <textarea class="form-control" rows="10" v-model="form.body">{{$thread->body}}</textarea>--}}
+            <wysiwyg v-model="form.body"></wysiwyg>
         </div>
 {{--            <textarea class="form-control" rows="10" v-model="form.body">{{$thread->body}}</textarea>--}}
     </div>
@@ -55,7 +56,7 @@
         </div>
     </div>
 
-    <div class="card-body" v-text="form.body"></div>
+    <div class="card-body" v-html="form.body"></div>
     {{--        {{$thread -> body}}--}}
     <div class="card-footer" v-if="authorize('owns',thread)">
         <button class="btn btn-xs" @click="editing = true">Edit</button>

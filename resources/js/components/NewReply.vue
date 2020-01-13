@@ -6,13 +6,15 @@
 
       <div v-if="signedIn">
           <div class="form-group">
-                <textarea name="body"
-                          id="body"
-                          class="form-control"
-                          placeholder="Wanna leave a comment?"
-                          rows="4"
-                          required
-                          v-model="body"></textarea>
+
+              <wysiwyg name="body" v-model="body" placeholder="Have something to say?" :shouldClear="completed"></wysiwyg>
+<!--                <textarea name="body"-->
+<!--                          id="body"-->
+<!--                          class="form-control"-->
+<!--                          placeholder="Wanna leave a comment?"-->
+<!--                          rows="4"-->
+<!--                          required-->
+<!--                          v-model="body"></textarea>-->
           </div>
 
           <button type="submit"
@@ -35,7 +37,7 @@
         data() {
             return {
                 body: '',
-                endpoint: '/threads/aut/53/replies'
+                completed: false
             };
         },
 
@@ -47,7 +49,7 @@
 
         mounted() {
             $('#body').atwho({
-               at: @,
+               at: "@",
                delay: 750,
                callbacks: {
                    remoteFilter: function (query, callback) {
@@ -57,7 +59,7 @@
                    }
                }
             });
-        }
+        },
 
         methods: {
             addReply(){
@@ -69,7 +71,7 @@
 
                     .then( ({data}) => {
                     this.body = '';
-
+                    this.completed = true;
                     flash('Your reply has been posted.');
 
                     this.$emit('created', data);

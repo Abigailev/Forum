@@ -25,6 +25,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css">--}}
 
     <style>
         body { padding-bottom: 100px; }
@@ -34,6 +35,7 @@
         .mr-1 { margin-right: 1em; }
         .ml-a { margin-left: auto; }
         [v-cloak] { display: none; }
+        .ais-hightlight > em {background: darkseagreen; font-style: normal;}
     </style>
 
     @yield('header')
